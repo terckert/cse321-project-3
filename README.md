@@ -19,7 +19,6 @@
   - [Declarations (Global Variables)](#declarations-global-variables)
   - [APIs and Elements](#apis-and-elements)
     - [InterruptIn](#interruptin)
-    - [CSE321_LCD](#cse321_lcd)
     - [Keypad](#keypad)
     - [LCD](#lcd)
     - [LEDs](#leds)
@@ -77,8 +76,6 @@ Sets a pin as an interrupt. Program uses the following functions:
 1. fall
     
     Sets the falling edge callback function.
-### CSE321_LCD
-
 
 ### Keypad
 
