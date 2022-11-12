@@ -15,7 +15,6 @@
   - [External References](#external-references)
   - [Files](#files)
     - [lcd1602.cpp | lcd1602.h](#lcd1602cpp--lcd1602h)
-    - [CSE321_project2_terckert_main.cpp](#cse321_project2_terckert_maincpp)
   - [Declarations (Global Variables)](#declarations-global-variables)
   - [APIs and Elements](#apis-and-elements)
     - [InterruptIn](#interruptin)
@@ -61,9 +60,6 @@
 
 ### lcd1602.cpp | lcd1602.h
 - Contains all the logic and functions necessary to use the LCD
-
-### CSE321_project2_terckert_main.cpp
-- Program driver. Contains function global variables, functions, and main that controls program logic.
 
 ## Declarations (Global Variables)
 
