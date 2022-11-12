@@ -78,6 +78,16 @@ Sets a pin as an interrupt. Program uses the following functions:
     
     Sets the falling edge callback function.
 ### CSE321_LCD
+
+
+### Keypad
+
+### LCD
+
+[1602 LCD Datasheet](/1602_LCD_Datasheet.pdf)
+
+[LCD controller class header file](/lcd1602.h)
+
 Control logic for the LCD screen. Program uses the following functions:
 1. begin
     
@@ -91,15 +101,6 @@ Control logic for the LCD screen. Program uses the following functions:
 1. print
     
     Prints the desired string to the LED.
-
-### Keypad
-
-### LCD
-
-[1602 LCD Datasheet](/1602_LCD_Datasheet.pdf)
-
-[LCD controller class header file](/lcd1602.h)
-
 ### LEDs
 
 ## Custom functions
