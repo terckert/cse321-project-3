@@ -43,7 +43,6 @@
 
 ## External References
 - [Project Repository](hhttps://github.com/terckert/cse321-project-3)
-- [Planning Document](/CSE321_project2_stage2_part1_terckert.pdf)
 - [Nucleo API documentation](https://os.mbed.com/docs/mbed-os/v6.15/apis/index.html)
 - [Nucleo Reference Manual](https://www.st.com/resource/en/reference_manual/dm00310109-stm32l4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
 
