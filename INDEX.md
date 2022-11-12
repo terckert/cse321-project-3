@@ -8,6 +8,6 @@
 | Screenshots |  | Relevant Screenshots | [Repository](https://github.com/terckert/cse321-project-3/blob/main/stage-1-documents/CSE321-project3-terckert-repository-screenshot.pdf) |  | Collection of screenshots |
 | Nucleo |  | Official documentation | [Reference manual](https://www.st.com/resource/en/reference_manual/dm00310109-stm32l4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)<br>[API documentation](https://os.mbed.com/docs/mbed-os/v6.15/apis/index.html) |  | Quick access to Nucleo reference materials |
 | LCD |  | LCD references | [Class Definition](https://github.com/terckert/cse321-project-3/blob/main/lcd1602.h)<br>[Class Implementation](https://github.com/terckert/cse321-project-3/blob/main/lcd1602.cpp)<br>[Datasheet](https://github.com/terckert/cse321-project-3/blob/main/datasheets/1602_LCD_Datasheet.pdf)<br>[README](https://github.com/terckert/cse321-project-3#lcd) |  | Provides class implmentation details as well as information on how it is used in the program. |
-<!-- |  |  |  | [Link]() |  |  | -->
+
 
 

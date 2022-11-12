@@ -36,6 +36,18 @@
 ## Features
 
 ## Required Materials
+| Quantity | Item                                                  |
+| :------: | ----------------------------------------------------- |
+|    1     | Nucleo STM32L4R5ZI                                    |
+|    1     | 1602 LCD                                              |
+|    4     | 100ohm resistors                                      |
+|    4     | LEDs                                                  |
+|    1     | 4x4 Membrane Keypad                                   |
+|    1     | Solderless breadboard                                 |
+|    4     | Gikfun Metal Ball Tilt Shaking Position Switches      |
+|    1     | Arceli Passive Low Level Trigger Buzzer Alarm, 3.3-5v |
+|          | Female-to-male jumper wires                           |
+|          | Male-to-male jumper wires                             |
 
 ## Getting Started
 
