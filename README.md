@@ -3,26 +3,31 @@
 *This markdown file is included in my [repository](https://github.com/terckert/cse321-project-3). Some external file links and images may not work if not viewed from outside of the repo.*
 
 ## Table of Contents
-- [About](#about)
-- [Program Overview](#program-overview)
-- [Features](#features)
-- [Required materials](#required-materials)
-- [Getting started](#getting-started)
-- [Resources and references](#resources-and-references)
-    - [External references](#external-references)
-- [Files](#files)
+- [<center>cse321-project-3</center>](#centercse321-project-3center)
+    - [<center>Timothy Erckert</center>](#centertimothy-erckertcenter)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Program Overview](#program-overview)
+  - [Features](#features)
+  - [Required Materials](#required-materials)
+  - [Getting Started](#getting-started)
+  - [Resources and references](#resources-and-references)
+  - [External References](#external-references)
+  - [Files](#files)
     - [lcd1602.cpp | lcd1602.h](#lcd1602cpp--lcd1602h)
     - [CSE321_project2_terckert_main.cpp](#cse321_project2_terckert_maincpp)
-- [Declarations (Global Variables)](#declarations-global-variables)
-- [APIs and Elements](#apis-and-elements)
+  - [Declarations (Global Variables)](#declarations-global-variables)
+  - [APIs and Elements](#apis-and-elements)
     - [InterruptIn](#interruptin)
     - [CSE321_LCD](#cse321_lcd)
     - [Keypad](#keypad)
     - [LCD](#lcd)
     - [LEDs](#leds)
-- [Custom functions](#custom-functions)
+  - [Custom functions](#custom-functions)
     - [Logical functions](#logical-functions)
     - [Inline functions](#inline-functions)
+  - [Program flowchart](#program-flowchart)
+  - [Schematic](#schematic)
 
 ## About
 
@@ -37,7 +42,7 @@
 ## Resources and references
 
 ## External References
-- [Project Repository](https://github.com/terckert/cse-321-project-2)
+- [Project Repository](hhttps://github.com/terckert/cse321-project-3)
 - [Planning Document](/CSE321_project2_stage2_part1_terckert.pdf)
 - [Nucleo API documentation](https://os.mbed.com/docs/mbed-os/v6.15/apis/index.html)
 - [Nucleo Reference Manual](https://www.st.com/resource/en/reference_manual/dm00310109-stm32l4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
