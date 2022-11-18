@@ -2,9 +2,12 @@
  * File         : CSE321_project3_terckert_main.cpp
  * Author       : Timothy Erckert
  * Assignment   : Project 3
- * Purpose      : 
+ * Purpose      : This program is going to "save the world!" Its purpose to help someone hone their fine motor
+ *                skills. It is a simple digital level with LED and sound alarms to alert a user when it has begun
+ *                tipping to much forward, backward, left, or right. They can use these indicators to bring it back
+ *                to level.
  * 
- * Modules      : 
+ * Modules      : lcd1602.h
  * 
  * Inputs       : 4xTilt Sensors, 4x4 membrane keypad
  * 
@@ -13,8 +16,10 @@
  * Constraints  : 
  * 
  * References   :
+ * Nucleo manual: https://www.st.com/resource/en/reference_manual/dm00310109-stm32l4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf
+ * Nucleo API documentation: https://os.mbed.com/docs/mbed-os/v6.15/apis/index.html 
  * 
- * Created on   :
+ * Created on   : 11/18/2022
  * Changelist   :
  */
 

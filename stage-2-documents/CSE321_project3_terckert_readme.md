@@ -8,7 +8,7 @@
   - [Features](#features)
   - [Required Materials](#required-materials)
   - [Getting Started](#getting-started)
-  - [Resources and References](#resources-and-references)
+  - [Resources and references](#resources-and-references)
     - [External References](#external-references)
     - [Files](#files)
       - [lcd1602.cpp | lcd1602.h](#lcd1602cpp--lcd1602h)
@@ -19,9 +19,9 @@
       - [Keypad](#keypad)
       - [LCD](#lcd)
       - [LEDs](#leds)
-      - [Tilt Sensors](#tilt-sensors)
-      - [Buzzer](#buzzer)
     - [Custom functions](#custom-functions)
+      - [Logical functions](#logical-functions)
+      - [Inline functions](#inline-functions)
   - [Program flowchart](#program-flowchart)
   - [Schematic](#schematic)
 
@@ -139,13 +139,9 @@ Control logic for the LCD screen. Program uses the following functions:
 
 LEDs are on by default when the tilt sensor is level. They turn off when the sensor detects tilt.
 
-#### Tilt Sensors
-
-#### Buzzer
-
 ### Custom functions
 
 ## Program flowchart
-Stay tuned!
+
 ## Schematic
-Stay tuned!
+
