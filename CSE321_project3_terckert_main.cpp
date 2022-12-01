@@ -49,6 +49,7 @@ enum sound_mode {
     sound_off
 };
 sound_mode current_sound_mode = sound_on;           // Default sound mode is on
+Watchdog &wd = Watchdog::get_instance();
 
 // Keypad globals
 DigitalOut row_1(PF_13);                            // Controls power to keypad row 1
@@ -58,6 +59,7 @@ InterruptIn column_two(PF_15, PullDown);            // Set keypad interrupt colu
 // Event queue used by keypad interrupts. They call functions with mutexes so have to queue them up to avoid errors.
 EventQueue keypad_event(10*(EVENTS_EVENT_SIZE + sizeof(sound_mode)));
 Thread keypad_thread;                               // Thread for keypad_event queue
+
 
 // Tilt sensor input pins. Pin high - sensor is level. Pin low - sensor is askew.
 DigitalIn tilt_sensor_1(PA_7);                       // Reads signal from tilt sensor 1
@@ -105,10 +107,13 @@ int main()
     column_two.fall(&debounce_falling_edge);
 
     // Start thread that polls the tilt sensors, never ends
+    wd.start(120);
     buzzer_thread.start(callback(check_tilt_sensors));
     
     while (true) {
         // Keep program alive
+        // printf("Column 1: %d\t Column 2: %d\n", column_one.read(), column_two.read());
+        // ThisThread::sleep_for(200ms);
     }
     return 0;
 }
@@ -185,7 +190,7 @@ void debounce_falling_edge(){
  */
 void process_column_one_interrupt() {
     wait_us(50000);                             // Wait 50ms to debounce    
-    keypad_event.event(change_sound_mode, sound_on);
+    keypad_event.call(change_sound_mode, sound_on);
 }
 
 /**
@@ -208,7 +213,7 @@ void process_column_one_interrupt() {
  */
 void process_column_two_interrupt() {
     wait_us(50000);                             // Wait 50ms to debounce
-    keypad_event.event(change_sound_mode, sound_off);
+    keypad_event.call(change_sound_mode, sound_off);
 }
 
 void change_sound_mode(sound_mode new_sound_mode) {
@@ -237,7 +242,8 @@ void check_tilt_sensors() {
     // This function operates in a critical region.
     // change_sound_mode writes to current_sound_mode and buzzer_sound, possible conflicts
     while(true) {
-        buzzer_lock.lock();                     // Lock critical region
+        buzzer_lock.lock();
+        wd.kick();                     // Lock critical region
         if (current_sound_mode == sound_on) {   // If sound mode is currently on
             // Tilt sensors are high when level, low when askew. Buzzer sounds when any sensor is skewed.
             // Buzzer is also active low. Assignment statement uses bitwise AND, if any tilt sensors are
