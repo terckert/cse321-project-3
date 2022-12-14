@@ -49,7 +49,7 @@ enum sound_mode {
     sound_off
 };
 sound_mode current_sound_mode = sound_on;           // Default sound mode is on
-Watchdog &wd = Watchdog::get_instance();
+Watchdog &wd = Watchdog::get_instance();            // Watchdog timer
 
 // Keypad globals
 DigitalOut row_1(PF_13);                            // Controls power to keypad row 1
@@ -175,7 +175,7 @@ void debounce_falling_edge(){
  * Author       : Timothy Erckert
  * Assignment   : Project 3
  * Purpose      : Rising edge interrupt for column one. Debounces rising edge with a wait. Queues function
- *                to change sound mode to sound on
+ *                to change sound mode with a sound_on parameter
  * 
  * Parameters   : none
  * 
@@ -197,8 +197,8 @@ void process_column_one_interrupt() {
  * Function     : process_column_two_interrupt
  * Author       : Timothy Erckert
  * Assignment   : Project 3
- * Purpose      : Rising edge interrupt for column one. Debounces rising edge with a wait. If current sound
- *                mode is off, does nothing and returns. Otherwise queues function to change sound mode. 
+ * Purpose      : Rising edge interrupt for column one. Debounces rising edge with a wait. Queues function
+ *                to change sound mode with a sound_off parameter. 
  * 
  * Parameters   : none
  * 
@@ -216,6 +216,25 @@ void process_column_two_interrupt() {
     keypad_event.call(change_sound_mode, sound_off);
 }
 
+/**
+ * Function     : Change sound mode
+ * Author       : Timothy Erckert
+ * Assignment   : Project 3
+ * Purpose      : Added to an EventQueue by the keypad interrupts, this function will change the current
+ *                sound mode, allowing or restricting use of the buzzer as an auditory alert.
+ * 
+ * Parameters   : 
+ *      new_sound_mode - (sound_mode) Sound mode to be changed to 
+ * 
+ * Returns      : None
+ * 
+ * Physical Inputs  : None
+ * 
+ * Physical Outputs : Buzzer (potentially)
+ * 
+ * Constraints  : 
+ * Changelist   :
+ */
 void change_sound_mode(sound_mode new_sound_mode) {
     // This function operates in a critical region.
     // check_tilt_sensors reads from current sound mode and writes to buzzer_sound, possible conflicts
@@ -237,7 +256,27 @@ void change_sound_mode(sound_mode new_sound_mode) {
     buzzer_lock.unlock();                       // Unlock critical region
 }
 
-
+/**
+ * Function     : check_tilt_sensor
+ * Author       : Timothy Erckert
+ * Assignment   : Project 3
+ * Purpose      : The main loop of the buzzer peripheral. Polls the inputs from the tilt sensors every
+ *                10ms to determine if a sensor has detected tilt. This function also handles the watchdog
+ *                timer logic. If unable to aquire the buzzer_lock mutex within 120ms, it will restart the
+ *                program. This value was chosen based on the scenario that both a rising and falling edge
+ *                interrupt paused the program for 50ms each at the start of a pole cycle.
+ * 
+ * Parameters   : 
+ * 
+ * Returns      : None
+ * 
+ * Physical Inputs  : tilt_sensor_1, tilt_sensor_2, tilt_sensor_3, tilt_sensor_4
+ * 
+ * Physical Outputs : buzzer_sound
+ * 
+ * Constraints  : 
+ * Changelist   :
+ */
 void check_tilt_sensors() {
     // This function operates in a critical region.
     // change_sound_mode writes to current_sound_mode and buzzer_sound, possible conflicts

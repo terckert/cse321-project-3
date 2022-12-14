@@ -3,6 +3,7 @@
 *This markdown file is included in my [repository](https://github.com/terckert/cse321-project-3). Some external file links and images may not work if not viewed from outside of the repo.*
 
 ## Table of Contents
+
   - [About](#about)
   - [Program Overview](#program-overview)
   - [Features](#features)
