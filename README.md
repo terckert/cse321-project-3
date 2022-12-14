@@ -1,11 +1,12 @@
 # <center>cse321-project-3</center>
-### <center>Timothy Erckert</center>
+
+<center>Timothy Erckert</center>
+
 *This markdown file is included in my [repository](https://github.com/terckert/cse321-project-3). Some external file links and images may not work if not viewed from outside of the repo.*
 
 ## Table of Contents
 
 - [cse321-project-3](#cse321-project-3)
-		- [Timothy Erckert](#timothy-erckert)
 	- [Table of Contents](#table-of-contents)
 	- [About](#about)
 	- [Program Overview](#program-overview)
@@ -23,6 +24,8 @@
 			- [Watchdog](#watchdog)
 			- [Mutex](#mutex)
 			- [EventQueue](#eventqueue)
+			- [Thread](#thread)
+			- [DigitalOut](#digitalout)
 			- [Keypad](#keypad)
 			- [LCD](#lcd)
 			- [LEDs](#leds)
@@ -146,6 +149,17 @@ A function queue that allows multiple interrupts or threads to add to it. It is 
 1. call
 
 	Calls an event from the queue.
+
+#### Thread
+
+Allows for parallel execution of tasks. 
+
+1. start
+   Starts a new thread. Calls a function and passes in parameters relevant to its execution.
+
+#### DigitalOut
+
+Allows writing high or low to a Nucleo pin.
 
 #### Keypad
 The keypad row pin is constantly energized to capture input. When pressed, 1 and 2 will send an interrupt signal to queue a function to change sound modes.
