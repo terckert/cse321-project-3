@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [cse321-project-3](#cse321-project-3)
-  		- [Timothy Erckert](#timothy-erckert)
+		- [Timothy Erckert](#timothy-erckert)
 	- [Table of Contents](#table-of-contents)
 	- [About](#about)
 	- [Program Overview](#program-overview)
@@ -20,8 +20,10 @@
 		- [APIs and Peripherals](#apis-and-peripherals)
 			- [InterruptIn](#interruptin)
 			- [DigitalIn](#digitalin)
-			- [Keypad](#keypad)
 			- [Watchdog](#watchdog)
+			- [Mutex](#mutex)
+			- [EventQueue](#eventqueue)
+			- [Keypad](#keypad)
 			- [LCD](#lcd)
 			- [LEDs](#leds)
 			- [Tilt Sensors](#tilt-sensors)
@@ -108,17 +110,6 @@ Sets a pin to read in a high or low signal. These pins are used to detect input 
 |tilt_sensor_3|PD_15|
 |tilt_sensor_4|PF_12|
 
-#### Keypad
-The keypad row pin is constantly energized to capture input. When pressed, 1 and 2 will send an interrupt signal to queue a function to change sound modes.
-
-| Row output pin | Nucleo pin |
-|---|:---:|
-| Row: 1,2,3,A | F13 |
-
-| Column input pin | Nucleo pin|
-|---|:---:|
-| Column: 1,4,7,* | E13 |
-| Column: 2,5,8,0 | F15 |
 
 #### Watchdog
 
@@ -128,11 +119,11 @@ An internal timer that resets the microcontroller when a timer reaches 0.
    
    Initializes watchdog timer.
 
-1. start
+2. start
 
    Starts the watchdog timer with the specified timeout period.
 
-1. kick
+3. kick
    
    Resets the watchdog timers timout period.
 
@@ -155,6 +146,18 @@ A function queue that allows multiple interrupts or threads to add to it. It is 
 1. call
 
 	Calls an event from the queue.
+
+#### Keypad
+The keypad row pin is constantly energized to capture input. When pressed, 1 and 2 will send an interrupt signal to queue a function to change sound modes.
+
+| Row output pin | Nucleo pin |
+|---|:---:|
+| Row: 1,2,3,A | F13 |
+
+| Column input pin | Nucleo pin|
+|---|:---:|
+| Column: 1,4,7,* | E13 |
+| Column: 2,5,8,0 | F15 |
 
 #### LCD
 
