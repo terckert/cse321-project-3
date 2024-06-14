@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [cse321-project-3](#cse321-project-3)
+- [Digital Level](#digital-level)
 	- [Table of Contents](#table-of-contents)
 	- [About](#about)
 	- [Program Overview](#program-overview)
