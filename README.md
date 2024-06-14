@@ -1,4 +1,4 @@
-# <center>cse321-project-3</center>
+# <center>Digital Level</center>
 
 <center>Timothy Erckert</center>
 
